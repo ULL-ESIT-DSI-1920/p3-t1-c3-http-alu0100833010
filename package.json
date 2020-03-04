@@ -1,0 +1,20 @@
+{
+  "name": "20_3_public_space",
+  "version": "1.0.0",
+  "description": "Solutions for Chapter 20 of EJS book: https://eloquentjavascript.net/20_node.html by Juan Irache",
+  "main": "code.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js",
+    "debug": "node --inspect-brk server.js # open chrome at chrome://inspect"
+  },
+  "keywords": [],
+  "author": "Casiano Rodriguez-Leon <casiano.rodriguez.leon@gmail.com> (https://github.com/crguezl)",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^2.4.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
