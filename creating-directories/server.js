@@ -46,6 +46,16 @@ const { stat, readdir, mkdir } = require('fs').promises;
 // filesystem (fs) para acceder al método mkdir
 const mime = require('mime');
 
+
+/** 
+* Esta función define el método GET.
+* Devuelve una lista de archivos al leer un directorio y 
+* devuelve el contenido del archivo al leer un archivo normal. 
+* @param { request } representa al objeto request hecho por el cliente. 
+* @returns { body }  
+* @returns { status }  
+* @returns { type }  
+*/ 
 methods.GET = async function(request) {
   let path = urlPath(request.url);
   let stats;
@@ -64,6 +74,12 @@ methods.GET = async function(request) {
 
 const { rmdir, unlink } = require('fs').promises;
 
+/** 
+* Esta función define el método DELETE.
+* Elimina el archivo o directorio especificado. 
+* @param { request } representa al objeto request hecho por el cliente. 
+* @returns { status }      
+*/ 
 methods.DELETE = async function(request) {
   let path = urlPath(request.url);
   let stats;
@@ -89,6 +105,13 @@ function pipeStream(from, to) {
   });
 }
 
+/** 
+* Esta función define el método PUT.
+* Crea un nuevo archivo o lo reemplaza con los datos de la petición.
+* @param { request } representa al objeto request hecho por el cliente. 
+* @returns { body }  
+* @returns { status }    
+*/ 
 methods.PUT = async function(request) {
   let path = urlPath(request.url);
   await pipeStream(request, createWriteStream(path));
@@ -97,6 +120,13 @@ methods.PUT = async function(request) {
 
 // Ejercicio Directory Creation
 
+/** 
+* Esta función define el método MKCOL.
+* Crea un nuevo directorio si no existe con los datos de la petición.
+* @param { request } representa al objeto request hecho por el cliente. 
+* @returns { body }  
+* @returns { status }    
+*/  
 methods.MKCOL = async function(request) { // Función asíncrona que nos devuelve una promesa.
   // La función toma como parámetro request que representa al objeto request hecho por el cliente.
   let path = urlPath(request.url);

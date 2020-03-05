@@ -15,6 +15,7 @@
     "mime": "^2.4.4"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "jsdoc-to-markdown": "^5.0.3"
   }
 }
