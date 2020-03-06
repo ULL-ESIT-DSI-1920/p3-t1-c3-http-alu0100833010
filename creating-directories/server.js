@@ -1,3 +1,5 @@
+const jsdocApi = require('jsdoc-api')
+
 const { createServer } = require('http');
 
 const methods = Object.create(null);
@@ -56,6 +58,9 @@ const mime = require('mime');
 * @returns { status }  
 * @returns { type }  
 */ 
+
+function GET(cloak, dagger) {};
+
 methods.GET = async function(request) {
   let path = urlPath(request.url);
   let stats;
@@ -80,6 +85,9 @@ const { rmdir, unlink } = require('fs').promises;
 * @param { request } representa al objeto request hecho por el cliente. 
 * @returns { status }      
 */ 
+
+function DELETE(cloak, dagger) {};
+
 methods.DELETE = async function(request) {
   let path = urlPath(request.url);
   let stats;
@@ -112,6 +120,9 @@ function pipeStream(from, to) {
 * @returns { body }  
 * @returns { status }    
 */ 
+
+function PUT(cloak, dagger) {};
+
 methods.PUT = async function(request) {
   let path = urlPath(request.url);
   await pipeStream(request, createWriteStream(path));
@@ -127,6 +138,9 @@ methods.PUT = async function(request) {
 * @returns { body }  
 * @returns { status }    
 */  
+
+function MKCOL(cloak, dagger) {};
+
 methods.MKCOL = async function(request) { // Función asíncrona que nos devuelve una promesa.
   // La función toma como parámetro request que representa al objeto request hecho por el cliente.
   let path = urlPath(request.url);
